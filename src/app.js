@@ -26,7 +26,7 @@ store.dispatch(
     description: "Water Bill",
     note: "1000 Water Bill",
     amount: 350,
-    createdAt: 1000,
+    createdAt: 2000,
   })
 );
 
@@ -48,9 +48,6 @@ store.dispatch(
     createdAt: 1000,
   })
 );
-
-// setTextFilter -> for bill
-store.dispatch(setTextFilter("rent"));
 
 // getVisibleExpenses function -> print visible ones to the screen
 const state = store.getState();
