@@ -54,6 +54,12 @@ export default class ExpenseForm extends React.Component {
       }));
     } else {
       this.setState(() => ({ error: "" }));
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note,
+      });
       // clear the error
       console.log("submitted");
     }
@@ -62,7 +68,7 @@ export default class ExpenseForm extends React.Component {
   render() {
     return (
       <div>
-        <h5>{this.state.error ? this.state.error : undefined}</h5>
+        {this.state.error && <h5>{this.state.error}</h5>}
         <form onSubmit={this.onSubmit}>
           <input
             type="text"

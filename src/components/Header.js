@@ -7,7 +7,7 @@ const Header = () => (
       Home{" "}
     </NavLink>
     <NavLink to="/create" activeClassName="is-active" exact={true}>
-      Create{" "}
+      Create Expense{" "}
     </NavLink>
     <NavLink to="/help" activeClassName="is-active" exact={true}>
       Help{" "}
