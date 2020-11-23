@@ -1,22 +1,15 @@
 // Export stateless functional component
 // Description, amount, createdAt value.
 import React from "react";
-import { connect } from "react-redux";
-import { removeExpense } from "../actions/expenses";
-import selectExpenses from "../selectors/expenses";
+import { Link } from "react-router-dom";
 
 const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => (
   <div>
-    <h4>{description}</h4>
+    <Link to={`/edit/${id}`}>
+      <h4>{description}</h4>
+    </Link>
     <p>Amount: ${amount}</p>
     <p>Created at: {createdAt}</p>
-    <button
-      onClick={() => {
-        dispatch(removeExpense({ id }));
-      }}
-    >
-      Remove
-    </button>
   </div>
 );
 
@@ -24,4 +17,4 @@ const mapStateToProps = (state) => {
   return { expenses: state.expenses };
 };
 
-export default connect(mapStateToProps)(ExpenseListItem);
+export default ExpenseListItem;

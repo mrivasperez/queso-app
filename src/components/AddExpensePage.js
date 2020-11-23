@@ -7,6 +7,7 @@ const AddExpensePage = (props) => (
   <div>
     <h3>Add an expense</h3>
     <ExpenseForm
+      submitButtonText="Add Expense"
       onSubmit={(expense) => {
         props.dispatch(addExpense(expense));
         props.history.push("/");
