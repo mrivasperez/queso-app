@@ -1,8 +1,11 @@
+import moment from "moment";
+
+// Filteers Reducer
 const filtersReducerDefaultState = {
   text: "",
   sortBy: "date",
-  startDate: undefined,
-  endDate: undefined,
+  startDate: moment().startOf("month"),
+  endDate: moment().endOf("month"),
 };
 
 //   filtersReducers is default export
