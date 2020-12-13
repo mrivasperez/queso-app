@@ -15,6 +15,7 @@ import {
 } from "./actions/filters";
 
 import getVisibleExpenses from "./selectors/expenses";
+import "./firebase/firebase";
 
 const store = configureStore();
 
