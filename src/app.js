@@ -5,14 +5,7 @@ import "normalize.css/normalize.css";
 import configureStore from "./store/configureStore";
 import "./styles/styles.scss";
 import AppRouter from "./routers/AppRouter";
-import { addExpense, removeExpense, editExpense } from "./actions/expenses";
-import {
-  setTextFilter,
-  sortByAmount,
-  sortByDate,
-  setStartDate,
-  setEndDate,
-} from "./actions/filters";
+import { startSetExpenses } from "./actions/expenses";
 
 import getVisibleExpenses from "./selectors/expenses";
 import "./firebase/firebase";
@@ -21,34 +14,34 @@ const store = configureStore();
 
 console.log(store.getState());
 
-// addExpense -> water bill
-store.dispatch(
-  addExpense({
-    description: "Water Bill",
-    note: "1000 Water Bill",
-    amount: 350,
-    createdAt: 2000,
-  })
-);
+// // addExpense -> water bill
+// store.dispatch(
+//   addExpense({
+//     description: "Water Bill",
+//     note: "1000 Water Bill",
+//     amount: 350,
+//     createdAt: 2000,
+//   })
+// );
 
-// addExpense -> Gas bill
-store.dispatch(
-  addExpense({
-    description: "Gas Bill",
-    note: "1000 Gas Bill",
-    amount: 250,
-    createdAt: 1000,
-  })
-);
+// // addExpense -> Gas bill
+// store.dispatch(
+//   addExpense({
+//     description: "Gas Bill",
+//     note: "1000 Gas Bill",
+//     amount: 250,
+//     createdAt: 1000,
+//   })
+// );
 
-store.dispatch(
-  addExpense({
-    description: "Rent",
-    note: "December Rent",
-    amount: 1250,
-    createdAt: 1000,
-  })
-);
+// store.dispatch(
+//   addExpense({
+//     description: "Rent",
+//     note: "December Rent",
+//     amount: 1250,
+//     createdAt: 1000,
+//   })
+// );
 
 // getVisibleExpenses function -> print visible ones to the screen
 const state = store.getState();
@@ -60,5 +53,9 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
+// loading until setexpenses have started
+ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
 
-ReactDOM.render(jsx, document.getElementById("app"));
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(jsx, document.getElementById("app"));
+});
