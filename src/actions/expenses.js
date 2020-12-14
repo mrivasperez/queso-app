@@ -40,12 +40,36 @@ export const removeExpense = ({ id } = {}) => ({
   id,
 });
 
+export const startRemoveExpense = ({ id }) => {
+  return (dispatch) => {
+    console.log(id);
+    return database
+      .ref(`expenses/${id}`)
+      .remove()
+      .then((snapshot) => {
+        console.log(snapshot);
+        // let id = snapshot.key;
+        dispatch(removeExpense({ id }));
+      });
+  };
+};
+
 // EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
   type: "EDIT_EXPENSE",
   id,
   updates,
 });
+
+export const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    console.log("updates");
+    return database
+      .ref(`expenses/${id}`)
+      .update(updates)
+      .then(() => dispatch(editExpense(id, updates)));
+  };
+};
 
 // Manipulates redux store
 // SET_EXPENSES from FIREBASE DB

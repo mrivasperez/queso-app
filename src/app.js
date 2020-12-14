@@ -54,7 +54,7 @@ const jsx = (
   </Provider>
 );
 // loading until setexpenses have started
-ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+ReactDOM.render(<h1>Loading...</h1>, document.getElementById("app"));
 
 store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx, document.getElementById("app"));
