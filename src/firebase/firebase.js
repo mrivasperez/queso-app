@@ -1,7 +1,5 @@
 // import three required sections of firebase
-import firebase from "firebase/app";
-import "firebase/database";
-import "firebase/storage";
+import * as firebase from "firebase";
 
 const config = {
   apiKey: "AIzaSyAmfFCM9RKrlIW7SWxMwaxc_J9Bta3nZbg",
@@ -17,8 +15,9 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, database as default };
+export { googleAuthProvider, firebase, database as default };
 
 // // child_removed
 // database.ref("expenses").on("child_removed", (snapshot) => {
