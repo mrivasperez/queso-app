@@ -4,7 +4,6 @@ import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 
 const now = moment();
-console.log(now.format("MMM Do YYYY"));
 
 // Challenge create error in state, conditionally render it in page
 
@@ -65,7 +64,6 @@ export default class ExpenseForm extends React.Component {
         note: this.state.note,
       });
       // clear the error
-      console.log("submitted");
     }
   };
 

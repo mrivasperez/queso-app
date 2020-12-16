@@ -12,8 +12,6 @@ import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
 
-console.log(store.getState());
-
 // getVisibleExpenses function -> print visible ones to the screen
 const state = store.getState();
 

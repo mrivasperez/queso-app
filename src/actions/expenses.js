@@ -44,12 +44,11 @@ export const removeExpense = ({ id } = {}) => ({
 export const startRemoveExpense = ({ id }) => {
   return (dispatch, getState) => {
     let uid = getState().auth.uid;
-    console.log(id);
+
     return database
       .ref(`users/${uid}/expenses/${id}`)
       .remove()
       .then((snapshot) => {
-        console.log(snapshot);
         // let id = snapshot.key;
         dispatch(removeExpense({ id }));
       });
