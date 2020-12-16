@@ -1,0 +1,26 @@
+button.button__login {
+  margin-top: $m-size;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #bfbfbf, -8px -8px 16px #ffffff;
+  transition: 0.2s;
+}
+
+button.button__login:hover {
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #8a8a8a, -8px -8px 16px #ffffff;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+button.button__login:active {
+  transform: scale(0.9);
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #8a8a8a, -8px -8px 16px #ffffff;
+}

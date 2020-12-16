@@ -1,0 +1,14 @@
+.header {
+  background: $yellow;
+}
+
+.header__title {
+  color: $dark-grey;
+  text-decoration: none;
+  h1 {
+    margin: 0;
+  }
+  img {
+    height: 50px;
+  }
+}
