@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import ExpenseForm from "./ExpenseForm";
 import { startAddExpense } from "../actions/expenses";
@@ -12,8 +13,23 @@ export class AddExpensePage extends React.Component {
   render() {
     return (
       <div>
-        <h3>Add an expense</h3>
-        <ExpenseForm submitButtonText="Add Expense" onSubmit={this.onSubmit} />
+        <div className="page-header">
+          <div className="content-container">
+            {" "}
+            <h1 className="page-header__title">Add Expense</h1>
+            <div className="page-header__actions">
+              <Link className="button" to="/">
+                Cancel
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="content-container">
+          <ExpenseForm
+            submitButtonText="Add Expense"
+            onSubmit={this.onSubmit}
+          />
+        </div>
       </div>
     );
   }

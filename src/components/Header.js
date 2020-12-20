@@ -5,19 +5,16 @@ import { startLogout } from "../actions/auth";
 
 export const Header = ({ startLogout }) => (
   <header className="header">
-    <Link className="header__title" to="/dashboard" exact={true}>
-      <img
-        className="header__title__logo"
-        src="/images/logo.svg"
-        alt="a slice of cheese"
-      />
-      <h1>queso</h1>
-    </Link>
-    <NavLink to="/create" activeClassName="is-active" exact={true}>
-      Create Expense{" "}
-    </NavLink>
-
-    <button onClick={startLogout}>Logout</button>
+    <div className="content-container">
+      <div className="header__content">
+        <Link className="header__title" to="/dashboard">
+          <img src="/images/logo.svg" alt="a slice of cheese" />
+        </Link>
+        <button className="button" onClick={startLogout}>
+          Logout
+        </button>
+      </div>
+    </div>
   </header>
 );
 

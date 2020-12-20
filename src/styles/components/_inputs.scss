@@ -1,0 +1,23 @@
+.text-input {
+  border: 1px solid #dbdbdb;
+  height: 50px;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: black;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.text-input:focus {
+  outline: $yellow solid;
+}
+
+.select {
+  @extend .text-input;
+  background: white;
+}
+
+.textarea {
+  @extend .text-input;
+  height: 10rem;
+}

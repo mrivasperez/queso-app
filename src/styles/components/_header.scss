@@ -1,14 +1,25 @@
 .header {
   background: $yellow;
+  border-bottom: 1px solid rgba(202, 202, 167, 0.582);
+}
+
+.header__content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size 0;
 }
 
 .header__title {
   color: $dark-grey;
   text-decoration: none;
-  h1 {
-    margin: 0;
-  }
+  margin: 0;
+  padding: 0;
+  height: 50px;
+
   img {
-    height: 50px;
+    height: 100%;
+    margin: 0;
+    display: inline;
   }
 }

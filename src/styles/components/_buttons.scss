@@ -24,3 +24,43 @@ button.button__login:active {
   border-radius: 15px;
   box-shadow: 8px 8px 16px #8a8a8a, -8px -8px 16px #ffffff;
 }
+
+.button {
+  background-color: black;
+  color: white;
+  font-size: 1.3rem;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  transition: 0.18s;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: rgb(60, 60, 60);
+}
+
+.button:focus {
+  transform: scale(0.9);
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px #494949;
+}
+
+.button__right {
+  text-align: right;
+}
+
+.button__secondary {
+  @extend .button;
+
+  background-color: white;
+  color: black;
+  border: black 2px solid;
+  padding: 7px;
+}
+
+.button__secondary:hover {
+  background-color: rgb(179, 179, 179);
+}
