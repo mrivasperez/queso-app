@@ -30,7 +30,6 @@ const renderApp = () => {
 };
 
 // loading until setexpenses have started
-ReactDOM.render(<h1>Loading...</h1>, document.getElementById("app"));
 
 // check if user is logged in or out
 firebase.auth().onAuthStateChanged((user) => {
